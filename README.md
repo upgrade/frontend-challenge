@@ -11,9 +11,9 @@ The review team will be evaluating your solution based on:
 
 ## Implementing your solution
 
-This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution.
+This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. If you want more information on how to manage the development server and tooling, please consult the [create-react-app docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-Once you're confident with your result, please submit your solution by [opening a pull request](https://help.github.com/articles/creating-a-pull-request/) in the original repository. Feel free to use the Github pull request interface to explain the different concepts explored within your implementation and why you decided to implement things the way they are, just keep in mind that the goal is to help guide the person that is going to be reviewing your code so try to make it clear and concise.
+Once you're confident with your result, please submit your solution by contacting HR with a link to your working repository. Optionally, you may add a `INTRODUCTION.md` file to explain the different concepts explored within your implementation and why you decided to implement things the way they are, just keep in mind that the goal is to help guide the person that is going to be reviewing your code so try to make it clear and concise.
 
 ## Challenge
 
