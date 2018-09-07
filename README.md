@@ -1,5 +1,10 @@
 # Upgrade Challenge
 
+## Prerequesites
+
+- Latest [Node.js LTS](https://nodejs.org/en/download/)
+- [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com/)
+
 ## Goals
 
 The review team will be evaluating your solution based on:
@@ -42,6 +47,16 @@ The following wireframe represent how each of these pages should look like and t
 - There's a second server that gets started on `npm|yarn start` that provides the mocked API endpoints: `http://localhost:3001`
 - The list of colors to be displayed in the `/more-info` page should be built from the response of `http://localhost:3001/api/colors` endpoint
 - In order to submit the form data use an `application/json` content type in your `POST` request to `http://localhost:3001/api/submit` endpoint
+  - Data should look like:
+  ```json
+  {
+      "name": "",
+      "email": "",
+      "password": "",
+      "color": "",
+      "terms": false
+  }
+  ```
 - Show success / error page according to the returned http status from the submit response
 - Make sure to add a loading indicator (spinner) to all API requests in order to provide ux feedback since the mocked server will have a delayed response
 
