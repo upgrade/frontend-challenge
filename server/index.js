@@ -20,7 +20,8 @@ app.post('/api/submit', express.json(), (req, res) => setTimeout(() => {
   if (name && email && password && color && terms && name !== 'Error') {
     res.sendStatus(200);
   } else {
-    res.sendStatus(400);
+    res.type('json');
+    res.status(400).send({ error: 'All fields are mandatory and the agreement must be accepted' });
   }
 }, 3000 * Math.random()));
 

@@ -39,3 +39,27 @@ request(app)
   })
   .expect(400)
   .end(error);
+
+// Missing field.
+request(app)
+  .post('/api/submit')
+  .send({
+    name: 'Error',
+    email: 'foo@bar.ca',
+    color: 'blue',
+    terms: true
+  })
+  .expect(400)
+  .end(error);
+
+  // Empty field.
+request(app)
+  .post('/api/submit')
+  .send({
+    name: '',
+    email: 'foo@bar.ca',
+    color: 'blue',
+    terms: true
+  })
+  .expect(400)
+  .end(error);
