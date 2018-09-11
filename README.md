@@ -14,9 +14,27 @@ The review team will be evaluating your solution based on:
 - JavaScript Knowledge: Good usage of language features in order to solve the proposed problem
 - UX/UI: Consistent usage of good user experience patterns and overall attention to detail
 
+_If you have questions regarding the challenge or feel the instructions are unclear, please reach out to your contact at Upgrade._
+
 ## Implementing your solution
 
-This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. If you want more information on how to manage the development server and tooling, please consult the [create-react-app docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
+This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. 
+
+### Quick start
+
+```sh
+# with yarn
+yarn
+yarn start
+
+# with npm
+npm i
+npm start
+```
+
+This will install all required dependencies and start a development server.
+
+> For more information on how to manage the development server and tooling, please consult the [create-react-app docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 Once you're confident with your result, please submit your solution by contacting HR with a link to your working repository. Optionally, you may add a `INTRODUCTION.md` file to explain the different concepts explored within your implementation and why you decided to implement things the way they are, just keep in mind that the goal is to help guide the person that is going to be reviewing your code so try to make it clear and concise.
 
