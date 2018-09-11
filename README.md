@@ -1,6 +1,6 @@
 # Upgrade Challenge
 
-## Prerequesites
+## Prerequisites
 
 - Latest [Node.js LTS](https://nodejs.org/en/download/)
 - [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com/)
@@ -33,7 +33,7 @@ Your app should contain the follow routes:
 - `/`: Initial form, should contain 3 fields: first name, email and password and a next button
 - `/more-info`: Second part, should have 2 form fields: favorite color select field, an agreement checkbox and a back/next button
 - `/confirmation`: Should display data from the 2 previous steps and show a submit button that sends the form request (also a back button to allow changes)
-- `/success`: Final page to be shown if form is successfuly submitted
+- `/success`: Final page to be shown if form is successfully submitted
 - `/error` Error page that the user should be taken to in case anything goes wrong
 
 ### Wireframes
@@ -58,5 +58,5 @@ The following wireframe represent how each of these pages should look like and t
   }
   ```
 - Show success / error page according to the returned http status from the submit response
-- Make sure to add a loading indicator (spinner) to all API requests in order to provide ux feedback since the mocked server will have a delayed response
+- Make sure to add a loading indicator (spinner) to all API requests in order to provide UX feedback since the mocked server will have a delayed response
 
