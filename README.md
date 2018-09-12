@@ -66,9 +66,9 @@ The following wireframe represents how each of these pages should look and the e
 
 ### Specifications
 
-> **Note:** _There is no need to create any API endpoints_. The endpoints you need will automatically be accessible on `http://localhost:3001` after you invoke `npm start` or `yarn start`.
+> **Note:** _There is no need to create any API endpoints_. The endpoints you need will be accessible on `http://localhost:3001` after you invoke `npm start` or `yarn start`.
 
-1. The list of colors to be displayed in the `/more-info` page should be built from the response of a `GET` request to `http://localhost:3001/api/colors`
+1. The list of colors to be displayed in the `/more-info` page should be built from the response to a `GET` request to `http://localhost:3001/api/colors`
 
 2. To submit the form data, use a `POST` request with an `application/json` content type to the `http://localhost:3001/api/submit` endpoint. The submitted data should look like:
 
