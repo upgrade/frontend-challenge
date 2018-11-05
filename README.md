@@ -18,7 +18,7 @@ _If you have questions regarding the challenge or feel the instructions are uncl
 
 ## Implementing your solution
 
-This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. 
+This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [clone](https://help.github.com/articles/cloning-a-repository/) this repository to your local computer in order to start working on a solution.
 
 ### Quick start
 
