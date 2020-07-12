@@ -1,0 +1,78 @@
+/* Globals */
+body {
+  font-family: 'Lato', sans-serif;
+}
+h1 {
+  text-align: center;
+}
+ul li {
+  line-height: 24px;
+}
+
+/* Forms */
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
+select {
+  padding: 4px 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  width: 300px;
+}
+
+/* Buttons */
+.buttons button {
+  padding: 4px 8px;
+  margin-right: 10px;
+  border: 1px solid #e0e0e0;
+}
+.buttons button:last-of-type {
+  margin-right: 0;
+}
+
+/* Steps */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-content {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loader */
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Completion step */
+.completion-step-text {
+  text-align: center;
+  max-width: 500px;
+}
