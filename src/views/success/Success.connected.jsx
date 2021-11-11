@@ -10,5 +10,5 @@ export const SuccessConnected = () => {
         navigate('/');
     };
 
-    return <Success onRetart={handleRestart} />;
+    return <Success onRestart={handleRestart} />;
 };

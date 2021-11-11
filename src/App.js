@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Box, ThemeProvider, createTheme } from '@mui/material';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
 import {
     SignUpConnected,
@@ -24,12 +26,14 @@ export const App = () => {
     );
 
     return (
-        <BrowserRouter>
+        <Provider store={store}>
             <ThemeProvider theme={theme}>
-                <Box margin={'2rem'} display="flex">
-                    <RenderRoutes />
-                </Box>
+                <BrowserRouter>
+                    <Box margin={'2rem'} display="flex">
+                        <RenderRoutes />
+                    </Box>
+                </BrowserRouter>
             </ThemeProvider>
-        </BrowserRouter>
+        </Provider>
     );
 };
