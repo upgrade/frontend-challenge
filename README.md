@@ -18,7 +18,7 @@ _If you have questions regarding the challenge or feel the instructions are uncl
 
 ## Implementing your solution
 
-This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. 
+This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution.
 
 ### Quick start
 
@@ -50,7 +50,7 @@ Your app should respond to the following 5 routes:
 
 `/` (root) The initial step should have 3 fields: first name, email and password and a next button.
 
-`/more-info` The second step should have 2 fields: a favorite color select field and an agreement checkbox. A back button allows going back to the initial step and a next button to the confirmation screen. 
+`/more-info` The second step should have 2 fields: a favorite color select field and an agreement checkbox. A back button allows going back to the initial step and a next button to the confirmation screen.
 
 `/confirmation`: The third step is a read-only confirmation screen displaying the data collected in the 2 previous steps and a button to submit the form. A back button allows going back to to the previous step.
 
@@ -72,15 +72,15 @@ The following wireframe represents how each of these pages should look and the e
 
 2. To submit the form data, use a `POST` request with an `application/json` content type to the `http://localhost:3001/api/submit` endpoint. The submitted data should look like:
 
-  ```json
-  {
-      "name": "",
-      "email": "",
-      "password": "",
-      "color": "",
-      "terms": false
-  }
-  ```
+```json
+{
+  "name": "",
+  "email": "",
+  "password": "",
+  "color": "",
+  "terms": false
+}
+```
 
 3. Show the success / error page according to the HTTP status returned from the submit request.
 

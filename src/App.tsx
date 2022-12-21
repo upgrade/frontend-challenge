@@ -8,6 +8,6 @@ const App = () => {
       <RouterProvider router={router} />
     </SignUpLayout>
   );
-}
+};
 
 export default App;

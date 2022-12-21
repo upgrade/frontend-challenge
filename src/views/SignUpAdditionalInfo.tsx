@@ -1,10 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const SignUpAdditionalInfo: React.FC = () => {
-
-  return (
-    <></>
-  );
+  return <></>;
 };
 
 export default SignUpAdditionalInfo;

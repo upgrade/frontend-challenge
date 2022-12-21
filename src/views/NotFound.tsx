@@ -1,10 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const NotFound: React.FC = () => {
-
-  return (
-    <>Not Found</>
-  );
+  return <>Not Found</>;
 };
 
 export default NotFound;
