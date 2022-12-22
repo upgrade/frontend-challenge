@@ -1,7 +1,3 @@
-
-
-const loader = async () => {
-  
-};
+const loader = async () => {};
 
 export default loader;

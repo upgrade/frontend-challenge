@@ -10,9 +10,7 @@ const SignUpLayout: React.FC<SignUpLayoutProps> = ({ children }) => {
     <Box padding={4}>
       <VStack spacing={4}>
         <Center>Company Logo</Center>
-        <Center>
-          {children}
-        </Center>
+        <Center>{children}</Center>
       </VStack>
     </Box>
   );
