@@ -63,19 +63,19 @@ const SignUpConfirmation: React.FC = () => {
             <Text>Make sure everything looks ok.</Text>
             <List fontSize="xl" spacing={4}>
               <ListItem>
-                <HStack>
+                <HStack wrap="wrap">
                   <Box fontWeight="light">First Name:</Box>
                   <Box>{signUpState.firstName}</Box>
                 </HStack>
               </ListItem>
               <ListItem>
-                <HStack>
+                <HStack wrap="wrap">
                   <Box fontWeight="light">Email:</Box>
                   <Box>{signUpState.email}</Box>
                 </HStack>
               </ListItem>
               <ListItem>
-                <HStack>
+                <HStack wrap="wrap">
                   <Box fontWeight="light">Password:</Box>
                   <Box>
                     {showPassword
@@ -92,13 +92,13 @@ const SignUpConfirmation: React.FC = () => {
                 </HStack>
               </ListItem>
               <ListItem>
-                <HStack>
+                <HStack wrap="wrap">
                   <Box fontWeight="light">Favorite Color:</Box>
                   <Box>{signUpState.favoriteColor}</Box>
                 </HStack>
               </ListItem>
               <ListItem>
-                <HStack>
+                <HStack wrap="wrap">
                   <Box fontWeight="light">Accepted Terms and Conditions: </Box>
                   <Box>
                     {signUpState.agreeTermsAndConditions

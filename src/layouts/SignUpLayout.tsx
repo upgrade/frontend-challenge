@@ -6,6 +6,9 @@ import {
   Switch,
   HStack,
   Heading,
+  Link,
+  Card,
+  CardBody
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -19,13 +22,19 @@ const SignUpLayout: React.FC<SignUpLayoutProps> = ({ children }) => {
   return (
     <Box padding={4}>
       <VStack spacing={4}>
-        <HStack p={2} width="100%" justifyContent="space-between">
-          <Heading>Product Logo</Heading>
+        <HStack wrap="wrap" p={2} width="100%" justifyContent="space-between">
+          <Heading><Link href="/">Product Logo</Link></Heading>
           <Switch onChange={toggleColorMode}>
             {colorMode === "light" ? "Light" : "Dark"}
           </Switch>
         </HStack>
-        <Center>{children}</Center>
+        <Center>
+          <Card>
+            <CardBody p={8}>
+              {children}
+            </CardBody>
+          </Card>
+        </Center>
       </VStack>
     </Box>
   );

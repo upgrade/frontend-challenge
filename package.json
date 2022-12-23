@@ -15,6 +15,7 @@
     "express": "^4.18.2",
     "framer-motion": "^7.10.3",
     "ky": "^0.33.0",
+    "lottie-react": "^2.3.1",
     "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
