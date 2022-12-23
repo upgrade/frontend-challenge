@@ -8,7 +8,7 @@ import {
   Heading,
   Link,
   Card,
-  CardBody
+  CardBody,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -19,20 +19,22 @@ interface SignUpLayoutProps {
 const SignUpLayout: React.FC<SignUpLayoutProps> = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
+  throw new Error("sdfdf");
+
   return (
     <Box padding={4}>
       <VStack spacing={4}>
         <HStack wrap="wrap" p={2} width="100%" justifyContent="space-between">
-          <Heading><Link href="/">Product Logo</Link></Heading>
+          <Heading>
+            <Link href="/">Product Logo</Link>
+          </Heading>
           <Switch onChange={toggleColorMode}>
             {colorMode === "light" ? "Light" : "Dark"}
           </Switch>
         </HStack>
         <Center>
           <Card>
-            <CardBody p={8}>
-              {children}
-            </CardBody>
+            <CardBody p={8}>{children}</CardBody>
           </Card>
         </Center>
       </VStack>
