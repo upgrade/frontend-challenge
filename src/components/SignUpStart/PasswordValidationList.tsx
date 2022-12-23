@@ -39,7 +39,9 @@ const PasswordValidationList: React.FC<PasswordValidationListProps> = ({
   return (
     <Card width="100%">
       <CardHeader>
-        <Text fontWeight={600} as="label">Passwords must:</Text>
+        <Text fontWeight={600} as="label">
+          Passwords must:
+        </Text>
       </CardHeader>
       <CardBody pt={0}>
         <List spacing={0.5}>

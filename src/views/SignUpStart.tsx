@@ -26,9 +26,9 @@ import {
 import { InfoIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSignUpState } from "../contexts/signUpStateContext";
+import { useSignUpState } from "src/contexts/signUpStateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
-import PasswordValidationList from "../components/SignUpStart/PasswordValidationList";
+import PasswordValidationList from "src/components/SignUpStart/PasswordValidationList";
 
 export interface SignUpStartInputs {
   firstName: string;
@@ -66,18 +66,18 @@ const SignUpStart: React.FC = () => {
 
   useEffect(() => {
     if (signUpState.firstName) {
-      setValue("firstName", signUpState.firstName)
+      setValue("firstName", signUpState.firstName);
     }
 
     if (signUpState.email) {
-      setValue("email", signUpState.email)
+      setValue("email", signUpState.email);
     }
 
     setSignUpState({
       ...signUpState,
-      firstName: '',
-      email: '',
-      password: '',
+      firstName: "",
+      email: "",
+      password: "",
     });
   }, []);
 
@@ -163,8 +163,8 @@ const SignUpStart: React.FC = () => {
                 <PasswordValidationList errors={errors} />
               </FormErrorMessage>
             </FormControl>
-            <HStack>
-              <Button type="submit" variant="solid">
+            <HStack width="100%" justifyContent="end">
+              <Button type="submit" variant="solid" colorScheme="green">
                 Next
               </Button>
             </HStack>

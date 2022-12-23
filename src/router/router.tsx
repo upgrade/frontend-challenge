@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "../views/NotFound";
-import SignUpAdditionalInfo from "../views/SignUpAdditionalInfo";
-import SignUpConfirmation from "../views/SignUpConfirmation";
-import SignUpError from "../views/SignUpError";
-import SignUpStart from "../views/SignUpStart";
-import SignUpSuccess from "../views/SignUpSuccess";
+import NotFound from "src/views/NotFound";
+import SignUpAdditionalInfo from "src/views/SignUpAdditionalInfo";
+import SignUpConfirmation from "src/views/SignUpConfirmation";
+import SignUpError from "src/views/SignUpError";
+import SignUpStart from "src/views/SignUpStart";
+import SignUpSuccess from "src/views/SignUpSuccess";
+import signUpAdditionalInfoLoader from "src/router/signUpAdditionalInfoLoader";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/more-info",
     element: <SignUpAdditionalInfo />,
+    loader: signUpAdditionalInfoLoader,
   },
   {
     path: "/confirmation",
