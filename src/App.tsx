@@ -8,7 +8,10 @@ const App = () => {
   return (
     <SignUpLayout>
       <SignUpStateProvider>
-        <RouterProvider router={router} fallbackElement={<Spinner />} />
+        <RouterProvider
+          router={router}
+          fallbackElement={<Spinner size="xl" />}
+        />
       </SignUpStateProvider>
     </SignUpLayout>
   );

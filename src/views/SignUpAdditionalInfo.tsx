@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import {
   Box,
   Heading,
@@ -12,6 +12,7 @@ import {
   FormErrorMessage,
   Select,
   Checkbox,
+  Link,
 } from "@chakra-ui/react";
 import { useSignUpState } from "src/contexts/signUpStateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -29,7 +30,9 @@ const SignUpAdditionalInfo: React.FC = () => {
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm<SignUpAdditionalInfoInputs>({ defaultValues: { agreeTermsAndConditions: false }});
+  } = useForm<SignUpAdditionalInfoInputs>({
+    defaultValues: { agreeTermsAndConditions: false },
+  });
   const colors = useLoaderData() as string[];
 
   useEffect(() => {
@@ -46,7 +49,7 @@ const SignUpAdditionalInfo: React.FC = () => {
     setSignUpState({
       ...signUpState,
       favoriteColor: data.favoriteColor,
-      agreeTermsAndConditions: data.agreeTermsAndConditions
+      agreeTermsAndConditions: data.agreeTermsAndConditions,
     });
     navigate("/confirmation");
   };
@@ -54,32 +57,58 @@ const SignUpAdditionalInfo: React.FC = () => {
   return (
     <Box>
       <VStack spacing={6}>
-        <Heading as="h1">Sign Up</Heading>
-        <Text>Lets get started with some basic information.</Text>
+        <Heading as="h1">Additional Information</Heading>
+        <Text>Just a few more things.</Text>
         <Box as="form" width="100%" onSubmit={handleSubmit(onSubmit)}>
-          <VStack spacing={4}>
+          <VStack spacing={6}>
             <FormControl isInvalid={!!errors.favoriteColor}>
               <FormLabel>Choose your favorite color</FormLabel>
               <Select
                 placeholder="Choose a color"
                 {...register("favoriteColor", { required: true })}
               >
-                { colors.map((color) => <option value={color} key={color}>{color}</option>) }
+                {colors.map((color) => (
+                  <option value={color} key={color}>
+                    {color}
+                  </option>
+                ))}
               </Select>
-              {errors.favoriteColor && errors.favoriteColor.type === "required" && (
-                <FormErrorMessage>Favorite color is required.</FormErrorMessage>
-              )}
+              {errors.favoriteColor &&
+                errors.favoriteColor.type === "required" && (
+                  <FormErrorMessage>
+                    Favorite color is required.
+                  </FormErrorMessage>
+                )}
             </FormControl>
             <FormControl isInvalid={!!errors.agreeTermsAndConditions}>
               <HStack>
-                <Checkbox {...register("agreeTermsAndConditions", { required: true })}>
-                  I Agree to <Link to="#">Terms and Conditions</Link>
+                <Checkbox
+                  {...register("agreeTermsAndConditions", { required: true })}
+                >
+                  I Agree to{" "}
+                  <Link
+                    fontWeight={600}
+                    href="https://google.com"
+                    color="blue.500"
+                    isExternal
+                  >
+                    Terms and Conditions
+                  </Link>
                 </Checkbox>
               </HStack>
-              <FormErrorMessage>You must agree to the terms and conditions.</FormErrorMessage>
+              <FormErrorMessage>
+                You must agree to the terms and conditions.
+              </FormErrorMessage>
             </FormControl>
             <HStack justifyContent="space-between" width="100%">
-              <Button type="button" variant="outline" colorScheme="green" onClick={(event) => navigate('/')}>Back</Button>
+              <Button
+                type="button"
+                variant="outline"
+                colorScheme="green"
+                onClick={(event) => navigate("/")}
+              >
+                Back
+              </Button>
               <Button type="submit" variant="solid" colorScheme="green">
                 Next
               </Button>
