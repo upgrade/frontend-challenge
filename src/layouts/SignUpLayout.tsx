@@ -19,8 +19,6 @@ interface SignUpLayoutProps {
 const SignUpLayout: React.FC<SignUpLayoutProps> = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  throw new Error("sdfdf");
-
   return (
     <Box padding={4}>
       <VStack spacing={4}>
