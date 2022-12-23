@@ -6,23 +6,32 @@ import {
   FormLabel,
   FormControl,
   Input,
-  FormHelperText,
   HStack,
   Button,
-  FormErrorIcon,
   FormErrorMessage,
   InputRightElement,
   InputGroup,
-  Card,
-  CardHeader,
-  CardBody,
+  Popover,
+  PopoverArrow,
+  PopoverContent,
+  PopoverCloseButton,
+  PopoverHeader,
+  PopoverBody,
+  IconButton,
+  useDisclosure,
+  PopoverAnchor,
+  List,
+  ListItem,
+  Icon,
 } from "@chakra-ui/react";
+import { InfoIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignUpState } from "../contexts/signUpStateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
+import PasswordValidationList from "../components/SignUpStart/PasswordValidationList";
 
-interface SignUpStartInputs {
+export interface SignUpStartInputs {
   firstName: string;
   email: string;
   password: string;
@@ -31,6 +40,7 @@ interface SignUpStartInputs {
 const SignUpStart: React.FC = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const { isOpen, onToggle, onClose } = useDisclosure();
   const { signUpState, setSignUpState } = useSignUpState();
   const {
     register,
@@ -45,9 +55,6 @@ const SignUpStart: React.FC = () => {
     /[~`! @#$%^&*()_\-+={[}\]|\:;"'<,>.?/]/.test(input);
 
   const onSubmit: SubmitHandler<SignUpStartInputs> = (data) => {
-    // confirm validation
-    console.log(data);
-
     setSignUpState({
       ...signUpState,
       firstName: data.firstName,
@@ -62,7 +69,7 @@ const SignUpStart: React.FC = () => {
       <VStack spacing={6}>
         <Heading as="h1">Sign Up</Heading>
         <Text>Lets get started with some basic information.</Text>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Box as="form" width="100%" onSubmit={handleSubmit(onSubmit)}>
           <VStack spacing={4}>
             <FormControl isInvalid={!!errors.firstName}>
               <FormLabel>First Name</FormLabel>
@@ -82,7 +89,34 @@ const SignUpStart: React.FC = () => {
               )}
             </FormControl>
             <FormControl isInvalid={!!errors.password}>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>
+                Password{" "}
+                <Popover isOpen={isOpen} onClose={onClose} placement="auto">
+                  <PopoverAnchor>
+                    <IconButton
+                      onClick={onToggle}
+                      aria-label="Show password requirements"
+                      height="auto"
+                      minW="initial"
+                      icon={<InfoIcon />}
+                    />
+                  </PopoverAnchor>
+                  <PopoverContent>
+                    <PopoverArrow />
+                    <PopoverCloseButton />
+                    <PopoverHeader>Passwords must:</PopoverHeader>
+                    <PopoverBody>
+                      <List>
+                        <ListItem>Be at least 8 characters long</ListItem>
+                        <ListItem>Contain a uppercase letter</ListItem>
+                        <ListItem>Contain a lowercase letter</ListItem>
+                        <ListItem>Contain a number</ListItem>
+                        <ListItem>Contain a special character</ListItem>
+                      </List>
+                    </PopoverBody>
+                  </PopoverContent>
+                </Popover>
+              </FormLabel>
               <InputGroup>
                 <Input
                   type={showPassword ? "text" : "password"}
@@ -109,20 +143,7 @@ const SignUpStart: React.FC = () => {
                 </InputRightElement>
               </InputGroup>
               <FormErrorMessage>
-                <Card width="100%">
-                  <CardHeader>
-                    <Text as="label">Passwords must:</Text>
-                  </CardHeader>
-                  <CardBody>
-                    <ul>
-                      <li>Be at least 8 characters long</li>
-                      <li>Contain a uppercase letter</li>
-                      <li>Contain a lowercase letter</li>
-                      <li>Contain a number</li>
-                      <li>Contain a special character</li>
-                    </ul>
-                  </CardBody>
-                </Card>
+                <PasswordValidationList errors={errors} />
               </FormErrorMessage>
             </FormControl>
             <HStack>
@@ -131,7 +152,7 @@ const SignUpStart: React.FC = () => {
               </Button>
             </HStack>
           </VStack>
-        </form>
+        </Box>
       </VStack>
     </Box>
   );
