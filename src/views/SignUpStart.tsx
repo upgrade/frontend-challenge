@@ -145,6 +145,7 @@ const SignUpStart: React.FC = () => {
                 <InputGroup>
                   <Input
                     type={showPassword ? "text" : "password"}
+                    pr={12}
                     {...register("password", {
                       required: true,
                       minLength: 8,
@@ -156,10 +157,8 @@ const SignUpStart: React.FC = () => {
                       },
                     })}
                   />
-                  <InputRightElement>
+                  <InputRightElement width={12}>
                     <Button
-                      p={1}
-                      mr={1}
                       size="sm"
                       variant="ghost"
                       onClick={(event) => setShowPassword(!showPassword)}

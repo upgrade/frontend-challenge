@@ -1,9 +1,15 @@
-import ky from "ky";
+import { redirect } from "react-router-dom";
+import request from "src/utils/requestClient";
 
-const loader = async (): Promise<string[]> => {
-  const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:3001/api";
-
-  return await ky.get(`${API_BASE_URL}/colors`).json();
+const loader = async (): Promise<string[] | Response> => {
+  try {
+    const colors: string[] = await request.get("colors").json();
+    return colors.map(
+      (color) => `${color.charAt(0).toUpperCase()}${color.slice(1)}`
+    );
+  } catch (error) {
+    return redirect("/error");
+  }
 };
 
 export default loader;

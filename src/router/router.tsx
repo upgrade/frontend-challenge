@@ -11,23 +11,28 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <SignUpStart />,
+    errorElement: <SignUpError />,
   },
   {
     path: "/more-info",
     element: <SignUpAdditionalInfo />,
+    errorElement: <SignUpError />,
     loader: signUpAdditionalInfoLoader,
   },
   {
     path: "/confirmation",
     element: <SignUpConfirmation />,
+    errorElement: <SignUpError />,
   },
   {
     path: "/success",
     element: <SignUpSuccess />,
+    errorElement: <SignUpError />,
   },
   {
     path: "/error",
     element: <SignUpError />,
+    errorElement: <SignUpError />,
   },
   {
     path: "*", //catch all
