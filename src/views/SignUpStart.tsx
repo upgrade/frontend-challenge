@@ -22,10 +22,9 @@ import {
   PopoverAnchor,
   List,
   ListItem,
-  Icon,
 } from "@chakra-ui/react";
 import { InfoIcon } from "@chakra-ui/icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSignUpState } from "../contexts/signUpStateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -45,6 +44,7 @@ const SignUpStart: React.FC = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<SignUpStartInputs>({ criteriaMode: "all" });
 
@@ -63,6 +63,23 @@ const SignUpStart: React.FC = () => {
     });
     navigate("/more-info");
   };
+
+  useEffect(() => {
+    if (signUpState.firstName) {
+      setValue("firstName", signUpState.firstName)
+    }
+
+    if (signUpState.email) {
+      setValue("email", signUpState.email)
+    }
+
+    setSignUpState({
+      ...signUpState,
+      firstName: '',
+      email: '',
+      password: '',
+    });
+  }, []);
 
   return (
     <Box>
