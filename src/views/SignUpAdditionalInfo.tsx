@@ -45,13 +45,24 @@ const SignUpAdditionalInfo: React.FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (
+      signUpState.firstName &&
+      signUpState.email &&
+      signUpState.password &&
+      signUpState.favoriteColor &&
+      signUpState.agreeTermsAndConditions
+    ) {
+      navigate("/confirmation");
+    }
+  }, [signUpState]);
+
   const onSubmit: SubmitHandler<SignUpAdditionalInfoInputs> = (data) => {
     setSignUpState({
       ...signUpState,
       favoriteColor: data.favoriteColor,
       agreeTermsAndConditions: data.agreeTermsAndConditions,
     });
-    navigate("/confirmation");
   };
 
   return (
@@ -59,11 +70,17 @@ const SignUpAdditionalInfo: React.FC = () => {
       <VStack spacing={6}>
         <Heading as="h1">Additional Information</Heading>
         <Text>Just a few more things.</Text>
-        <Box as="form" width="100%" onSubmit={handleSubmit(onSubmit)}>
+        <Box
+          as="form"
+          data-id="more-info-form"
+          width="100%"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <VStack spacing={6}>
             <FormControl isInvalid={!!errors.favoriteColor}>
               <FormLabel>Choose your favorite color</FormLabel>
               <Select
+                data-id="color-select"
                 placeholder="Choose a color"
                 {...register("favoriteColor", { required: true })}
               >
@@ -83,6 +100,7 @@ const SignUpAdditionalInfo: React.FC = () => {
             <FormControl isInvalid={!!errors.agreeTermsAndConditions}>
               <HStack>
                 <Checkbox
+                  data-id="terms-checkbox"
                   {...register("agreeTermsAndConditions", { required: true })}
                 >
                   I Agree to{" "}

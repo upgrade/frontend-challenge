@@ -56,16 +56,6 @@ const SignUpStart: React.FC = () => {
   const passwordSpecial = (input: string) =>
     /[~`! @#$%^&*()_\-+={[}\]|\:;"'<,>.?/]/.test(input);
 
-  const onSubmit: SubmitHandler<SignUpStartInputs> = (data) => {
-    setSignUpState({
-      ...signUpState,
-      firstName: data.firstName,
-      email: data.email,
-      password: data.password,
-    });
-    navigate("/more-info");
-  };
-
   useEffect(() => {
     if (signUpState.firstName) {
       setValue("firstName", signUpState.firstName);
@@ -83,6 +73,25 @@ const SignUpStart: React.FC = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (
+      signUpState.firstName &&
+      signUpState.email &&
+      signUpState.password
+    ) {
+      navigate("/more-info");
+    }
+  }, [signUpState]);
+
+  const onSubmit: SubmitHandler<SignUpStartInputs> = (data) => {
+    setSignUpState({
+      ...signUpState,
+      firstName: data.firstName,
+      email: data.email,
+      password: data.password,
+    });
+  };
+
   return (
     <Box>
       {navState === "loading" ? (
@@ -91,11 +100,17 @@ const SignUpStart: React.FC = () => {
         <VStack spacing={6}>
           <Heading as="h1">Sign Up</Heading>
           <Text>Lets get started with some basic information.</Text>
-          <Box as="form" width="100%" onSubmit={handleSubmit(onSubmit)}>
+          <Box
+            as="form"
+            width="100%"
+            data-id="start-form"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <VStack spacing={4}>
               <FormControl isInvalid={!!errors.firstName}>
                 <FormLabel>First Name</FormLabel>
                 <Input
+                  data-id="first-name-input"
                   type="text"
                   {...register("firstName", { required: true })}
                 />
@@ -106,6 +121,7 @@ const SignUpStart: React.FC = () => {
               <FormControl isInvalid={!!errors.email}>
                 <FormLabel>Email</FormLabel>
                 <Input
+                  data-id="email-input"
                   type="email"
                   {...register("email", { required: true })}
                 />
@@ -144,6 +160,7 @@ const SignUpStart: React.FC = () => {
                 </FormLabel>
                 <InputGroup>
                   <Input
+                    data-id="password-input"
                     type={showPassword ? "text" : "password"}
                     pr={12}
                     {...register("password", {
