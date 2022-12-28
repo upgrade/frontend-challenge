@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpConfirmation should render sign up state values 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <form
+      class="css-8atqhb"
+      data-testid="confirmation-form"
+    >
+      <div
+        class="chakra-stack css-pfcv3f"
+      >
+        <h1
+          class="chakra-heading css-0"
+        >
+          Confirmation
+        </h1>
+        <p
+          class="chakra-text css-0"
+        >
+          Make sure everything looks ok.
+        </p>
+        <ul
+          class="css-16au9ar"
+          role="list"
+        >
+          <li
+            class="css-0"
+          >
+            <div
+              class="chakra-stack css-uxb30m"
+            >
+              <div
+                class="css-13xnkip"
+              >
+                First Name:
+              </div>
+              <div
+                class="css-0"
+                data-testid="first-name-value"
+              >
+                test
+              </div>
+            </div>
+          </li>
+          <li
+            class="css-0"
+          >
+            <div
+              class="chakra-stack css-uxb30m"
+            >
+              <div
+                class="css-13xnkip"
+              >
+                Email:
+              </div>
+              <div
+                class="css-0"
+                data-testid="email-value"
+              >
+                test
+              </div>
+            </div>
+          </li>
+          <li
+            class="css-0"
+          >
+            <div
+              class="chakra-stack css-uxb30m"
+            >
+              <div
+                class="css-13xnkip"
+              >
+                Password:
+              </div>
+              <div
+                class="css-0"
+                data-testid="password-value"
+              >
+                •
+                •
+                •
+                •
+              </div>
+              <button
+                class="chakra-button css-4xx2wk"
+                data-testid="show-password-btn"
+                type="button"
+              >
+                Show
+              </button>
+            </div>
+          </li>
+          <li
+            class="css-0"
+          >
+            <div
+              class="chakra-stack css-uxb30m"
+            >
+              <div
+                class="css-13xnkip"
+              >
+                Favorite Color:
+              </div>
+              <div
+                class="css-0"
+                data-testid="color-value"
+              >
+                test
+              </div>
+            </div>
+          </li>
+          <li
+            class="css-0"
+          >
+            <div
+              class="chakra-stack css-uxb30m"
+            >
+              <div
+                class="css-13xnkip"
+              >
+                Accepted Terms and Conditions: 
+              </div>
+              <div
+                class="css-0"
+                data-testid="terms-value"
+              >
+                Accepted
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div
+          class="chakra-stack css-1cqqob7"
+        >
+          <button
+            class="chakra-button css-4xx2wk"
+            type="button"
+          >
+            Back
+          </button>
+          <button
+            class="chakra-button css-4xx2wk"
+            data-testid="submit-btn"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpAdditionalInfo should render dropdown with correct colors 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <div
+      class="chakra-stack css-pfcv3f"
+    >
+      <h1
+        class="chakra-heading css-0"
+      >
+        Additional Information
+      </h1>
+      <p
+        class="chakra-text css-0"
+      >
+        Just a few more things.
+      </p>
+      <form
+        class="css-8atqhb"
+        data-testid="more-info-form"
+      >
+        <div
+          class="chakra-stack css-pfcv3f"
+        >
+          <div
+            class="chakra-form-control css-0"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-uvho5g"
+              for="field-:r0:"
+              id="field-:r0:-label"
+            >
+              Choose your favorite color
+            </label>
+            <div
+              class="chakra-select__wrapper css-42b2qy"
+            >
+              <select
+                class="chakra-select css-1ik61og"
+                data-testid="color-select"
+                id="field-:r0:"
+                name="favoriteColor"
+              >
+                <option
+                  value=""
+                >
+                  Choose a color
+                </option>
+                <option
+                  data-testid="color-select-option"
+                  value="Blue"
+                >
+                  Blue
+                </option>
+                <option
+                  data-testid="color-select-option"
+                  value="Black"
+                >
+                  Black
+                </option>
+                <option
+                  data-testid="color-select-option"
+                  value="Red"
+                >
+                  Red
+                </option>
+              </select>
+              <div
+                class="chakra-select__icon-wrapper css-162mkon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-select__icon"
+                  focusable="false"
+                  role="presentation"
+                  style="width: 1em; height: 1em; color: currentColor;"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chakra-form-control css-0"
+            role="group"
+          >
+            <div
+              class="chakra-stack css-84zodg"
+            >
+              <label
+                class="chakra-checkbox css-1elxtiq"
+                data-testid="terms-checkbox"
+              >
+                <input
+                  aria-disabled="false"
+                  aria-invalid="false"
+                  class="chakra-checkbox__input"
+                  id="field-:r1:"
+                  name="agreeTermsAndConditions"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  aria-hidden="true"
+                  class="chakra-checkbox__control css-dnty2r"
+                />
+                <span
+                  class="chakra-checkbox__label css-1oeb2oe"
+                >
+                  I Agree to
+                   
+                  <a
+                    class="chakra-link css-bd5f8p"
+                    href="https://google.com"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Terms and Conditions
+                  </a>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            class="chakra-stack css-1cqqob7"
+          >
+            <button
+              class="chakra-button css-4xx2wk"
+              type="button"
+            >
+              Back
+            </button>
+            <button
+              class="chakra-button css-4xx2wk"
+              type="submit"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

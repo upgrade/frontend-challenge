@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpStart should render three inputs 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <div
+      class="chakra-stack css-pfcv3f"
+    >
+      <h1
+        class="chakra-heading css-0"
+      >
+        Sign Up
+      </h1>
+      <p
+        class="chakra-text css-0"
+      >
+        Lets get started with some basic information.
+      </p>
+      <form
+        class="css-8atqhb"
+        data-testid="start-form"
+      >
+        <div
+          class="chakra-stack css-wulyol"
+        >
+          <div
+            class="chakra-form-control css-0"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-uvho5g"
+              for="field-:r1:"
+              id="field-:r1:-label"
+            >
+              First Name
+            </label>
+            <input
+              class="chakra-input css-0"
+              data-testid="first-name-input"
+              id="field-:r1:"
+              name="firstName"
+              type="text"
+            />
+          </div>
+          <div
+            class="chakra-form-control css-0"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-uvho5g"
+              for="field-:r2:"
+              id="field-:r2:-label"
+            >
+              Email
+            </label>
+            <input
+              class="chakra-input css-0"
+              data-testid="email-input"
+              id="field-:r2:"
+              name="email"
+              type="email"
+            />
+          </div>
+          <div
+            class="chakra-form-control css-0"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-uvho5g"
+              for="field-:r3:"
+              id="field-:r3:-label"
+            >
+              Password
+               
+              <button
+                aria-label="Show password requirements"
+                class="chakra-button css-xvp17x"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,1,1,0,2Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <div
+                class="chakra-popover__popper css-0"
+                style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+              >
+                <section
+                  aria-describedby="popover-body-:r5:"
+                  aria-labelledby="popover-header-:r5:"
+                  class="chakra-popover__content css-1ab1jlb"
+                  id="popover-content-:r5:"
+                  role="dialog"
+                  style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.95) translateZ(0);"
+                  tabindex="-1"
+                >
+                  <div
+                    class="chakra-popover__arrow-positioner css-0"
+                    data-popper-arrow=""
+                    style="position: absolute;"
+                  >
+                    <div
+                      class="chakra-popover__arrow css-0"
+                      data-popper-arrow-inner=""
+                    />
+                  </div>
+                  <button
+                    aria-label="Close"
+                    class="chakra-popover__close-btn css-6sdaxy"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="chakra-icon css-onkibi"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                  <header
+                    class="chakra-popover__header css-0"
+                    id="popover-header-:r5:"
+                  >
+                    Passwords must:
+                  </header>
+                  <div
+                    class="chakra-popover__body css-0"
+                    id="popover-body-:r5:"
+                  >
+                    <ul
+                      class="css-155za0w"
+                      role="list"
+                    >
+                      <li
+                        class="css-0"
+                      >
+                        Be at least 8 characters long
+                      </li>
+                      <li
+                        class="css-0"
+                      >
+                        Contain a uppercase letter
+                      </li>
+                      <li
+                        class="css-0"
+                      >
+                        Contain a lowercase letter
+                      </li>
+                      <li
+                        class="css-0"
+                      >
+                        Contain a number
+                      </li>
+                      <li
+                        class="css-0"
+                      >
+                        Contain a special character
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </label>
+            <div
+              class="chakra-input__group css-4302v8"
+            >
+              <input
+                class="chakra-input css-1bpvmlm"
+                data-testid="password-input"
+                id="field-:r3:"
+                name="password"
+                type="password"
+              />
+              <div
+                class="chakra-input__right-element css-dku7lc"
+              >
+                <button
+                  class="chakra-button css-4xx2wk"
+                  type="button"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chakra-stack css-1tphubk"
+          >
+            <button
+              class="chakra-button css-4xx2wk"
+              data-testid="next-btn"
+              type="submit"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

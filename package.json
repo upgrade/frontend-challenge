@@ -32,7 +32,7 @@
     "start:dev": "react-scripts start",
     "start": "run-p start:*",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --transformIgnorePatterns='/node_modules/(?!(ky/))'",
+    "test": "react-scripts test --env=jsdom --transformIgnorePatterns='/node_modules/(?!(ky/))' --coverage",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "test:e2e": "cypress run"
@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^13.4.0",
     "cypress": "^12.2.0",
     "jest-canvas-mock": "^2.4.0",
     "prettier": "^2.8.1"

@@ -29,7 +29,7 @@ const SignUpAdditionalInfo: React.FC = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm<SignUpAdditionalInfoInputs>({
     defaultValues: { agreeTermsAndConditions: false },
   });
@@ -47,6 +47,7 @@ const SignUpAdditionalInfo: React.FC = () => {
 
   useEffect(() => {
     if (
+      isSubmitted &&
       signUpState.firstName &&
       signUpState.email &&
       signUpState.password &&
@@ -72,7 +73,7 @@ const SignUpAdditionalInfo: React.FC = () => {
         <Text>Just a few more things.</Text>
         <Box
           as="form"
-          data-id="more-info-form"
+          data-testid="more-info-form"
           width="100%"
           onSubmit={handleSubmit(onSubmit)}
         >
@@ -80,12 +81,16 @@ const SignUpAdditionalInfo: React.FC = () => {
             <FormControl isInvalid={!!errors.favoriteColor}>
               <FormLabel>Choose your favorite color</FormLabel>
               <Select
-                data-id="color-select"
+                data-testid="color-select"
                 placeholder="Choose a color"
                 {...register("favoriteColor", { required: true })}
               >
                 {colors.map((color) => (
-                  <option value={color} key={color}>
+                  <option
+                    value={color}
+                    key={color}
+                    data-testid="color-select-option"
+                  >
                     {color}
                   </option>
                 ))}
@@ -100,7 +105,7 @@ const SignUpAdditionalInfo: React.FC = () => {
             <FormControl isInvalid={!!errors.agreeTermsAndConditions}>
               <HStack>
                 <Checkbox
-                  data-id="terms-checkbox"
+                  data-testid="terms-checkbox"
                   {...register("agreeTermsAndConditions", { required: true })}
                 >
                   I Agree to{" "}

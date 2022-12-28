@@ -46,6 +46,7 @@ const SignUpConfirmation: React.FC = () => {
       });
       navigate("/success");
     } catch (error) {
+      console.log(error);
       navigate("/error");
     } finally {
       setIsSubmitting(false);
@@ -57,7 +58,12 @@ const SignUpConfirmation: React.FC = () => {
       {navState === "loading" ? (
         <Spinner size="xl" />
       ) : (
-        <Box as="form" data-id="confirmation-form" width="100%" onSubmit={submitSignUp}>
+        <Box
+          as="form"
+          data-testid="confirmation-form"
+          width="100%"
+          onSubmit={submitSignUp}
+        >
           <VStack spacing={6}>
             <Heading as="h1">Confirmation</Heading>
             <Text>Make sure everything looks ok.</Text>
@@ -65,25 +71,27 @@ const SignUpConfirmation: React.FC = () => {
               <ListItem>
                 <HStack wrap="wrap">
                   <Box fontWeight="light">First Name:</Box>
-                  <Box data-id="first-name-value">{signUpState.firstName}</Box>
+                  <Box data-testid="first-name-value">
+                    {signUpState.firstName}
+                  </Box>
                 </HStack>
               </ListItem>
               <ListItem>
                 <HStack wrap="wrap">
                   <Box fontWeight="light">Email:</Box>
-                  <Box data-id="email-value">{signUpState.email}</Box>
+                  <Box data-testid="email-value">{signUpState.email}</Box>
                 </HStack>
               </ListItem>
               <ListItem>
                 <HStack wrap="wrap">
                   <Box fontWeight="light">Password:</Box>
-                  <Box data-id="password-value">
+                  <Box data-testid="password-value">
                     {showPassword
                       ? signUpState.password
                       : signUpState.password?.split("").map((x) => `•`)}
                   </Box>
                   <Button
-                    data-id="show-password-btn"
+                    data-testid="show-password-btn"
                     size="sm"
                     variant="outline"
                     onClick={(event) => setShowPassword(!showPassword)}
@@ -95,13 +103,15 @@ const SignUpConfirmation: React.FC = () => {
               <ListItem>
                 <HStack wrap="wrap">
                   <Box fontWeight="light">Favorite Color:</Box>
-                  <Box data-id="color-value">{signUpState.favoriteColor}</Box>
+                  <Box data-testid="color-value">
+                    {signUpState.favoriteColor}
+                  </Box>
                 </HStack>
               </ListItem>
               <ListItem>
                 <HStack wrap="wrap">
                   <Box fontWeight="light">Accepted Terms and Conditions: </Box>
-                  <Box data-id="terms-value">
+                  <Box data-testid="terms-value">
                     {signUpState.agreeTermsAndConditions
                       ? "Accepted"
                       : "Declined"}
@@ -119,12 +129,17 @@ const SignUpConfirmation: React.FC = () => {
                 Back
               </Button>
               <Button
+                data-testid="submit-btn"
                 type="submit"
                 variant="solid"
                 colorScheme="green"
                 isDisabled={isSubmitting}
               >
-                {isSubmitting ? <Spinner /> : "Submit"}
+                {isSubmitting ? (
+                  <Spinner data-testid="submit-btn-spinner" />
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </HStack>
           </VStack>

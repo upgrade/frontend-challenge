@@ -47,7 +47,7 @@ const SignUpStart: React.FC = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm<SignUpStartInputs>({ criteriaMode: "all" });
 
   const passwordUppercase = (input: string) => /[A-Z]/.test(input);
@@ -75,6 +75,7 @@ const SignUpStart: React.FC = () => {
 
   useEffect(() => {
     if (
+      isSubmitted &&
       signUpState.firstName &&
       signUpState.email &&
       signUpState.password
@@ -103,30 +104,34 @@ const SignUpStart: React.FC = () => {
           <Box
             as="form"
             width="100%"
-            data-id="start-form"
+            data-testid="start-form"
             onSubmit={handleSubmit(onSubmit)}
           >
             <VStack spacing={4}>
               <FormControl isInvalid={!!errors.firstName}>
                 <FormLabel>First Name</FormLabel>
                 <Input
-                  data-id="first-name-input"
+                  data-testid="first-name-input"
                   type="text"
                   {...register("firstName", { required: true })}
                 />
                 {errors.firstName && errors.firstName.types?.required && (
-                  <FormErrorMessage>First Name is required.</FormErrorMessage>
+                  <FormErrorMessage data-testid="first-name-input-error">
+                    First Name is required.
+                  </FormErrorMessage>
                 )}
               </FormControl>
               <FormControl isInvalid={!!errors.email}>
                 <FormLabel>Email</FormLabel>
                 <Input
-                  data-id="email-input"
+                  data-testid="email-input"
                   type="email"
                   {...register("email", { required: true })}
                 />
                 {errors.email && errors.email.types?.required && (
-                  <FormErrorMessage>Email is required.</FormErrorMessage>
+                  <FormErrorMessage data-testid="email-input-error">
+                    Email is required.
+                  </FormErrorMessage>
                 )}
               </FormControl>
               <FormControl isInvalid={!!errors.password}>
@@ -160,7 +165,7 @@ const SignUpStart: React.FC = () => {
                 </FormLabel>
                 <InputGroup>
                   <Input
-                    data-id="password-input"
+                    data-testid="password-input"
                     type={showPassword ? "text" : "password"}
                     pr={12}
                     {...register("password", {
@@ -184,12 +189,17 @@ const SignUpStart: React.FC = () => {
                     </Button>
                   </InputRightElement>
                 </InputGroup>
-                <FormErrorMessage>
+                <FormErrorMessage data-testid="password-input-error">
                   <PasswordValidationList errors={errors} />
                 </FormErrorMessage>
               </FormControl>
               <HStack width="100%" justifyContent="end">
-                <Button type="submit" variant="solid" colorScheme="green">
+                <Button
+                  type="submit"
+                  data-testid="next-btn"
+                  variant="solid"
+                  colorScheme="green"
+                >
                   Next
                 </Button>
               </HStack>

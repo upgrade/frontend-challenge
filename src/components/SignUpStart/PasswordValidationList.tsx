@@ -22,7 +22,13 @@ const PasswordValidationListItem: React.FC<PasswordValidationListItemProps> = ({
   children,
 }) => {
   return (
-    <ListItem color={isError ? "red.500" : "green.700"} display="flex">
+    <ListItem
+      color={isError ? "red.500" : "green.700"}
+      display="flex"
+      data-testid={`password-validation-list-item-${
+        isError ? "error" : "valid"
+      }`}
+    >
       {isError ? <ListIcon as={CloseIcon} /> : <ListIcon as={CheckIcon} />}
       {children}
     </ListItem>
