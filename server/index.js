@@ -23,7 +23,7 @@ app.post('/api/submit', express.json(), (req, res) => setTimeout(() => {
     res.type('json');
     res.status(400).send({ error: 'All fields are mandatory and the agreement must be accepted' });
   }
-}, 10000 * Math.random()));
+}, 3000 * Math.random()));
 
 if (!module.parent) {
   app.listen(3001, () => console.log('Mock server running'));

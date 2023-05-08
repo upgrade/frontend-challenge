@@ -18,5 +18,5 @@ I'm using `formik` v2 to easily manage the state and error handling in the sign-
 a schema validation file (/schema/index.js) for the input validations.
 
 ## Components structure
-I follow atomic design. Thus, I keep atomic components in the atoms folder and components that reuse atomic
-components in the components folder
+I follow the atomic design. Thus, I keep atomic components in the atoms folder and components that reuse atomic
+components in the components folder.
