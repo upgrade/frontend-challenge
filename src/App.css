@@ -1,0 +1,136 @@
+h1 {
+    text-align: center;
+}
+
+.error {
+    color: #fc8181;
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 0.25rem;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+} 
+
+@media screen and (min-width: 441px) {
+    form,
+    .form-section {
+        width: 95%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    form,
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        padding-top: 20px;
+        font-size: 0.875rem;
+    }
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.65rem 0.5rem;
+    font-size: 1rem;
+    color: #4a5568;
+    border: 2px solid #4a5568;
+    border-radius: 10px;
+    outline: none;
+}
+
+select {
+    text-transform: uppercase;
+}
+
+input:focus,
+select:focus {
+    border-color: #4299e1;
+}
+
+input::placeholder,
+select::placeholder {
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+input[type="checkbox"] {
+    width: fit-content;
+    margin-right: 0.5rem;
+    transform: scale(1.25);
+}
+
+button {
+    display: block;
+    margin: 1rem 0.5rem 1rem 0;
+    padding: 0.35rem 0;
+    background-color: #4299e1;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    min-height: 40px;
+    min-width: 120px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input.input-error,
+select.input-error {
+    border-color: #fc8181;
+}
+
+button:disabled {
+    opacity: 0.35;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.buttons-section {
+    display: flex;
+    padding-top: 25px;
+}
+
+.spinner {
+    position: fixed;
+    top: calc(50% - 300px);
+    left: calc(50% - 40px);
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    text-align: center;
+}
+
+.button-spinner {
+    display: inline-block;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
