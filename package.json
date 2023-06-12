@@ -11,11 +11,12 @@
     "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "typescript": "^5.1.3",
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.0",
     "@types/react": "^18.2.11",
-    "@types/react-dom": "^18.2.4"
+    "@types/react-dom": "^18.2.4",
+    "react-router-dom": "^6.12.1",
+    "typescript": "^5.1.3"
   },
   "scripts": {
     "start:mocks": "node server/index.js",
