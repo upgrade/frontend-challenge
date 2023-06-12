@@ -7,6 +7,10 @@ import { ButtonProps } from "./Button.types";
  * @param {void} onClick
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
-export const Button = ({ onClick, children }: ButtonProps) => {
-  return <button onClick={onClick}>{children}</button>;
+export const Button = ({ onClick, disabled, children }: ButtonProps) => {
+  return (
+    <button onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
+  );
 };

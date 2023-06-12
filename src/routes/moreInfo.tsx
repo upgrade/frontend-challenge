@@ -4,15 +4,18 @@ import { Dropbox } from "../components/Dropbox";
 import { Checkbox } from "../components/Checkbox";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { useColors } from "../hooks/api/useColors";
+import { Label } from "../components/Label";
 
 export const MoreInfoRoute = () => {
   const navigate = useNavigate();
-  const colors = ["black", "white"]; // TODO: pull from API
+  const { data: colors, isLoading } = useColors();
 
   return (
     <>
       <Title>Additional Info</Title>
-      <Dropbox name="colors" id="colors" options={colors} />
+      {isLoading && <Label>Loading...</Label>}
+      {colors && <Dropbox name="colors" id="colors" options={colors} />}
       <Checkbox options={[<>I agree to terms and conditions.</>]} />
       <Button
         onClick={() => {
@@ -25,6 +28,7 @@ export const MoreInfoRoute = () => {
         onClick={() => {
           navigate("/confirmation");
         }}
+        disabled={isLoading}
       >
         Next
       </Button>
