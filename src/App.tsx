@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { useRouter } from "./hooks/useRouter";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { FormContextProvider } from "./hooks/useFormContext";
+import { Icon } from "./components/Icon";
 
 export const App = () => {
   const router = useRouter();
@@ -15,6 +16,10 @@ export const App = () => {
       <FormContextProvider>
         <NextUIProvider>
           <Spacer y={5} />
+          <center>
+            <Icon src="/upgrade.png" size={250} />
+          </center>
+          <Spacer y={2.5} />
           <Container xs>
             <Card>
               <Card.Body>
