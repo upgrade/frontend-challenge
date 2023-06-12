@@ -1,6 +1,11 @@
 import { JSXElementConstructor, ReactElement } from "react";
 
-type RouteName = "/" | "more-info" | "confirmation" | "success" | "error";
+export type RouteName =
+  | "/"
+  | "more-info"
+  | "confirmation"
+  | "success"
+  | "error";
 
 export type AppRoutes = {
   path: RouteName;

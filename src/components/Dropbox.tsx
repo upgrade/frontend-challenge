@@ -7,6 +7,14 @@ import { DropboxProps } from "./Dropbox.types";
  * @param {string[]} options
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
-export const Dropbox = ({ options }: DropboxProps) => {
-  return <></>;
+export const Dropbox = ({ name, id, options }: DropboxProps) => {
+  return (
+    <>
+      <select name={name} id={id}>
+        {options.map((item) => (
+          <option value={item}>{item}</option>
+        ))}
+      </select>
+    </>
+  );
 };

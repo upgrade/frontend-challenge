@@ -8,5 +8,10 @@ import { CheckboxProps } from "./Checkbox.types";
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
 export const Checkbox = ({ options }: CheckboxProps) => {
-  return <></>;
+  return options.map((item) => (
+    <>
+      <input type="checkbox" />
+      {item}
+    </>
+  ));
 };

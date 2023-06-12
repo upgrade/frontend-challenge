@@ -8,5 +8,5 @@ import { TextInputProps } from "./TextInput.types";
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
 export const TextInput = ({ placeholder }: TextInputProps) => {
-  return <></>;
+  return <input placeholder={placeholder} />;
 };

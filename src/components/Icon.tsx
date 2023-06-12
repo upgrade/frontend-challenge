@@ -9,5 +9,5 @@ import { IconProps } from "./Icon.types";
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
 export const Icon = ({ src, size }: IconProps) => {
-  return <></>;
+  return <img src={src} width={size} />;
 };

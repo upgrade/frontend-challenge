@@ -2,11 +2,11 @@ import React from "react";
 
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./useRouter.types";
-import { RootRoute } from "../routes/root";
-import { MoreInfoRoute } from "../routes/moreInfo";
-import { ConfirmationRoute } from "../routes/confirmation";
-import { SuccessRoute } from "../routes/success";
-import { ErrorRoute } from "../routes/error";
+import { HomeRoute } from "../routes/Home";
+import { MoreInfoRoute } from "../routes/MoreInfo";
+import { ConfirmationRoute } from "../routes/Confirmation";
+import { SuccessRoute } from "../routes/Success";
+import { ErrorRoute } from "../routes/Error";
 
 /**
  * @typedef {import("react-router-dom").Router} Router
@@ -20,7 +20,7 @@ export const useRouter = () => {
   return createBrowserRouter([
     {
       path: "/",
-      element: <RootRoute />,
+      element: <HomeRoute />,
     },
     {
       path: "more-info",
