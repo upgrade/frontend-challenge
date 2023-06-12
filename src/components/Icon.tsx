@@ -8,6 +8,6 @@ import { IconProps } from "./Icon.types";
  * @param {number} size
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
-export const Icon = ({ src, size }: IconProps) => {
-  return <img src={src} width={size} />;
+export const Icon = ({ src, alt, size }: IconProps) => {
+  return <img src={src} alt={alt} width={size} />;
 };

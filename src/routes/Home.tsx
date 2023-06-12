@@ -60,7 +60,7 @@ export const HomeRoute = () => {
       />
       <Spacer y={0.5} />
       <TextInput
-        placeholder="password"
+        placeholder="Password"
         onChange={(value: string) =>
           updateField?.("password", { isInvalid: value.length === 0, value })
         }

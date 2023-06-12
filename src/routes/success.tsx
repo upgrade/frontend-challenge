@@ -12,7 +12,7 @@ export const SuccessRoute = () => {
     <>
       <Title>Success!</Title>
       <center>
-        <Icon src="success.png" size={256} />
+        <Icon src="success.png" alt="Success Image" size={256} />
         <Subtitle>You should receive a confirmation email soon.</Subtitle>
       </center>
       <Button

@@ -12,7 +12,7 @@ export const ErrorRoute = () => {
     <>
       <Title>Error!</Title>
       <center>
-        <Icon src="fail.png" size={256} />
+        <Icon src="fail.png" alt="Error Image" size={256} />
         <Subtitle>
           Uh oh, something went wrong. Please try again later.
         </Subtitle>
