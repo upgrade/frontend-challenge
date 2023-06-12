@@ -1,5 +1,6 @@
 import React from "react";
 import { LabelProps } from "./Label.types";
+import { Text } from "@nextui-org/react";
 
 /**
  * @component React component responsible to render a label. Modeled after the `<label>` tag.
@@ -9,7 +10,7 @@ import { LabelProps } from "./Label.types";
 export const Label = ({ children }: LabelProps) => {
   return (
     <div>
-      <label>{children}</label>
+      <Text h6>{children}</Text>
     </div>
   );
 };

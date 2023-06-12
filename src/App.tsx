@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Card, Container, NextUIProvider, Spacer } from "@nextui-org/react";
 import { RouterProvider } from "react-router-dom";
 import { useRouter } from "./hooks/useRouter";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -12,7 +13,16 @@ export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <FormContextProvider>
-        <RouterProvider router={router} />
+        <NextUIProvider>
+          <Spacer y={5} />
+          <Container xs>
+            <Card>
+              <Card.Body>
+                <RouterProvider router={router} />
+              </Card.Body>
+            </Card>
+          </Container>
+        </NextUIProvider>
       </FormContextProvider>
     </QueryClientProvider>
   );

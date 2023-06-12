@@ -11,8 +11,12 @@ export const ErrorRoute = () => {
   return (
     <>
       <Title>Error!</Title>
-      <Icon src="fail.png" size={256} />
-      <Subtitle>Uh oh, something went wrong. Please try again later.</Subtitle>
+      <center>
+        <Icon src="fail.png" size={256} />
+        <Subtitle>
+          Uh oh, something went wrong. Please try again later.
+        </Subtitle>
+      </center>
       <Button
         onClick={() => {
           navigate("/");

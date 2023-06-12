@@ -5,6 +5,7 @@ import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../hooks/useFormContext";
 import { isEmailValid } from "../utils/validators";
+import { Spacer } from "@nextui-org/react";
 
 export const HomeRoute = () => {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ export const HomeRoute = () => {
           })
         }
       />
+      <Spacer y={0.5} />
       <TextInput
         placeholder="E-Mail"
         onChange={(value: string) =>
@@ -56,12 +58,14 @@ export const HomeRoute = () => {
           })
         }
       />
+      <Spacer y={0.5} />
       <TextInput
         placeholder="password"
         onChange={(value: string) =>
           updateField?.("password", { isInvalid: value.length === 0, value })
         }
       />
+      <Spacer y={0.5} />
       <Button
         onClick={() => {
           navigate("/more-info");

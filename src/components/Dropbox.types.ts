@@ -1,6 +1,5 @@
 export type DropboxProps = {
-  name: string;
-  id: string;
+  initialValue: string;
   options: string[];
   onChange?: (value: string) => void;
 };

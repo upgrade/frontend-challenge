@@ -1,5 +1,6 @@
 import React from "react";
 import { TextInputProps } from "./TextInput.types";
+import { Input as _TextInput } from "@nextui-org/react";
 
 /**
  * @component React component responsible to render a text input. Modeled after the `<input>` tag.
@@ -11,9 +12,10 @@ import { TextInputProps } from "./TextInput.types";
 export const TextInput = ({ placeholder, onChange }: TextInputProps) => {
   return (
     <div>
-      <input
+      <_TextInput
         placeholder={placeholder}
         onChange={(event) => onChange?.(event.target.value)}
+        width="100%"
       />
     </div>
   );

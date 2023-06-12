@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useColors } from "../hooks/api/useColors";
 import { Label } from "../components/Label";
 import { useFormContext } from "../hooks/useFormContext";
+import { Loading, Spacer } from "@nextui-org/react";
 
 export const MoreInfoRoute = () => {
   const navigate = useNavigate();
@@ -27,26 +28,31 @@ export const MoreInfoRoute = () => {
   return (
     <>
       <Title>Additional Info</Title>
-      {isLoading && <Label>Loading...</Label>}
+      {isLoading && <Loading />}
       {colors && (
         <Dropbox
-          name="colors"
-          id="colors"
+          initialValue={colors?.[0]}
           options={colors}
           onChange={(value: string) => updateField?.("color", { value })}
         />
       )}
+      <Spacer y={0.5} />
       <Checkbox
         options={[<>I agree to terms and conditions.</>]}
-        onChange={(value: string) => updateField?.("terms", { value })}
+        onChange={(value: string | boolean) =>
+          updateField?.("terms", { value })
+        }
       />
+      <Spacer y={0.5} />
       <Button
+        color="secondary"
         onClick={() => {
           navigate("/");
         }}
       >
         Back
       </Button>
+      <Spacer y={0.5} />
       <Button
         onClick={() => {
           navigate("/confirmation");

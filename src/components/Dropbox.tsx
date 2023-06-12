@@ -1,4 +1,5 @@
-import React from "react";
+import React, { SetStateAction } from "react";
+import { Dropdown } from "@nextui-org/react";
 import { DropboxProps } from "./Dropbox.types";
 
 /**
@@ -7,20 +8,36 @@ import { DropboxProps } from "./Dropbox.types";
  * @param {string[]} options
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
-export const Dropbox = ({ name, id, options, onChange }: DropboxProps) => {
+export const Dropbox = ({
+  initialValue = "black",
+  options,
+  onChange,
+}: DropboxProps) => {
+  const [selected, setSelected] = React.useState(new Set([initialValue]));
+
+  const selectedValue = React.useMemo(
+    () => Array.from(selected).join(", ").split("_").join(" "),
+    [selected]
+  );
+
   return (
-    <div>
-      <select
-        name={name}
-        id={id}
-        onChange={(event) => onChange?.(event.target.value)}
+    <Dropdown>
+      <Dropdown.Button flat color="secondary" css={{ tt: "capitalize" }}>
+        {selectedValue}
+      </Dropdown.Button>
+      <Dropdown.Menu
+        disallowEmptySelection
+        selectionMode="single"
+        selectedKeys={selected}
+        onSelectionChange={(value) => {
+          onChange?.(value as string);
+          setSelected(value as SetStateAction<Set<string>>);
+        }}
       >
         {options.map((item, index) => (
-          <option value={item} key={index}>
-            {item}
-          </option>
+          <Dropdown.Item key={item}>{item}</Dropdown.Item>
         ))}
-      </select>
-    </div>
+      </Dropdown.Menu>
+    </Dropdown>
   );
 };

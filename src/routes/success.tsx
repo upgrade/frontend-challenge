@@ -11,8 +11,10 @@ export const SuccessRoute = () => {
   return (
     <>
       <Title>Success!</Title>
-      <Icon src="success.png" size={256} />
-      <Subtitle>You should receive a confirmation email soon.</Subtitle>
+      <center>
+        <Icon src="success.png" size={256} />
+        <Subtitle>You should receive a confirmation email soon.</Subtitle>
+      </center>
       <Button
         onClick={() => {
           navigate("/");

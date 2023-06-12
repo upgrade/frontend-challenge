@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckboxProps } from "./Checkbox.types";
+import { Checkbox as _Checkbox } from "@nextui-org/react";
 
 /**
  * @component React component responsible to render a checkbox. Modeled after the `<input>` tag.
@@ -10,11 +11,7 @@ import { CheckboxProps } from "./Checkbox.types";
 export const Checkbox = ({ options, onChange }: CheckboxProps) => {
   return options.map((item, index) => (
     <div key={index}>
-      <input
-        type="checkbox"
-        onChange={(event) => onChange?.(event.target.value)}
-      />
-      {item}
+      <_Checkbox onChange={(value) => onChange?.(value)}>{item}</_Checkbox>
     </div>
   ));
 };

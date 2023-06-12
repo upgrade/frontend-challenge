@@ -1,5 +1,6 @@
 import React from "react";
 import { TitleProps } from "./Title.types";
+import { Text } from "@nextui-org/react";
 
 /**
  * @component React component responsible to render a title. Modeled after the `<h1>` tag.
@@ -7,5 +8,5 @@ import { TitleProps } from "./Title.types";
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
 export const Title = ({ children }: TitleProps) => {
-  return <h1>{children}</h1>;
+  return <Text h1>{children}</Text>;
 };

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Label } from "../components/Label";
 import { useSubmit } from "../hooks/api/useSubmit";
 import { useFormContext } from "../hooks/useFormContext";
+import { Loading, Spacer } from "@nextui-org/react";
 
 export const ConfirmationRoute = () => {
   const navigate = useNavigate();
@@ -37,20 +38,23 @@ export const ConfirmationRoute = () => {
   return (
     <>
       <Title>Confirmation</Title>
-      <Label>First Name: {formData.name}</Label>
-      <Label>E-mail: {formData.email}</Label>
-      <Label>Password: {formData.password.replace(/./g, "*")}</Label>
-      <Label>Favorite Color: {formData.color}</Label>
+      <Label>First Name: {formData?.name}</Label>
+      <Label>E-mail: {formData?.email}</Label>
+      <Label>Password: {formData?.password?.replace(/./g, "*")}</Label>
+      <Label>Favorite Color: {formData?.color}</Label>
       <Label>
-        Terms and Conditions: {formData.terms ? "Agreed" : "Not Agreed"}
+        Terms and Conditions: {formData?.terms ? "Agreed" : "Not Agreed"}
       </Label>
+      <Spacer y={0.5} />
       <Button
+        color="secondary"
         onClick={() => {
           navigate("/more-info");
         }}
       >
         Back
       </Button>
+      <Spacer y={0.5} />
       <Button
         onClick={() => {
           mutate();
@@ -59,7 +63,8 @@ export const ConfirmationRoute = () => {
       >
         Submit
       </Button>
-      {isLoading && <Label>Loading...</Label>}
+      <Spacer y={0.5} />
+      {isLoading && <Loading />}
     </>
   );
 };
