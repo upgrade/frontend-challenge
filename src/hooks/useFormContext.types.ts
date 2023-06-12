@@ -1,15 +1,14 @@
 import { ReactNode } from "react";
 
 export type FormContextField = {
-  id: string;
-  label: string;
-  value: string | boolean | number;
-  isValid?: boolean;
+  value?: any;
+  isInvalid?: boolean;
 };
 
 export type FormContextType = {
-  fields?: FormContextField[] | {};
-  updateField?: (field: FormContextField) => void;
+  fields: Record<any, FormContextField>;
+  updateField: (id: string, field: FormContextField) => void;
+  initializeFields: (fields: Record<any, FormContextField>) => void;
 };
 
 export type FormContextProviderType = {

@@ -9,31 +9,43 @@ import {
  * @description Generic context used for handling form fields
  * @returns {React.Context}
  */
-export const FormContext = createContext<FormContextType>({
-  fields: undefined,
-  setFields: () => null,
-} as FormContextType);
+export const FormContext = createContext<FormContextType>(
+  {} as FormContextType
+);
 
 /**
  * @description Generic context provider used for handling form fields
  * @returns {React.JSX.Element}
  */
 export const FormContextProvider = ({ children }: FormContextProviderType) => {
-  const [fields, setFields] = useState({});
+  const [fields, setFields] = useState<Record<any, FormContextField>>({});
+
+  /**
+   * @description Initialize fields based on state.
+   * @returns {void}
+   */
+  const initializeFields = (initialFields: Record<any, FormContextField>) => {
+    setFields({
+      ...fields,
+      ...initialFields,
+    });
+  };
 
   /**
    * @description Update field on state and keep previous ones.
    * @returns {void}
    */
-  const updateField = (field: FormContextField) => {
+  const updateField = (id: string, field: FormContextField) => {
     setFields({
       ...fields,
-      ...field,
+      [id]: {
+        ...field,
+      },
     });
   };
 
   return (
-    <FormContext.Provider value={{ fields, updateField }}>
+    <FormContext.Provider value={{ fields, initializeFields, updateField }}>
       {children}
     </FormContext.Provider>
   );

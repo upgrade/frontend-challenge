@@ -7,5 +7,9 @@ import { LabelProps } from "./Label.types";
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
 export const Label = ({ children }: LabelProps) => {
-  return <label>{children}</label>;
+  return (
+    <div>
+      <label>{children}</label>
+    </div>
+  );
 };

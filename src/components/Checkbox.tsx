@@ -7,11 +7,14 @@ import { CheckboxProps } from "./Checkbox.types";
  * @param {string[]} options
  * @returns {JSX.Element} The JSX element to be rendered by React.
  */
-export const Checkbox = ({ options }: CheckboxProps) => {
-  return options.map((item) => (
-    <>
-      <input type="checkbox" />
+export const Checkbox = ({ options, onChange }: CheckboxProps) => {
+  return options.map((item, index) => (
+    <div key={index}>
+      <input
+        type="checkbox"
+        onChange={(event) => onChange?.(event.target.value)}
+      />
       {item}
-    </>
+    </div>
   ));
 };
