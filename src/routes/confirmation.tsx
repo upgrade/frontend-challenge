@@ -39,7 +39,7 @@ export const ConfirmationRoute = () => {
       <Title>Confirmation</Title>
       <Label>First Name: {formData.name}</Label>
       <Label>E-mail: {formData.email}</Label>
-      <Label>Password: {formData.password}</Label>
+      <Label>Password: {formData.password.replace(/./g, "*")}</Label>
       <Label>Favorite Color: {formData.color}</Label>
       <Label>
         Terms and Conditions: {formData.terms ? "Agreed" : "Not Agreed"}
