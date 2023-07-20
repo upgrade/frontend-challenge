@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Latest [Node.js LTS](https://nodejs.org/en/download/)
-- [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com/)
+- [yarn](https://yarnpkg.com/en/)
 
 ## Goals
 
@@ -18,7 +18,7 @@ _If you have questions regarding the challenge or feel the instructions are uncl
 
 ## Implementing your solution
 
-This repository contains an empty project boilerplate created using [create-react-app](https://github.com/facebook/create-react-app). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution. 
+This repository contains an empty project boilerplate created using [vite](https://vitejs.dev/). We ask that you please [fork](https://help.github.com/articles/fork-a-repo/) this repo and [clone](https://help.github.com/articles/cloning-a-repository/) this forked version to your local computer in order to start working on a solution.
 
 ### Quick start
 
@@ -26,15 +26,11 @@ This repository contains an empty project boilerplate created using [create-reac
 # with yarn
 yarn
 yarn start
-
-# with npm
-npm i
-npm start
 ```
 
 This will install all required dependencies and start a development server.
 
-> For more information on how to manage the development server and tooling, please consult the [create-react-app docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
+> For more information on how to manage the development server and tooling, please consult the [vite docs](https://vitejs.dev/guide).
 
 Once you're confident with your result, please submit your solution by contacting HR with a link to your working repository. Optionally, you may add a `INTRODUCTION.md` file to explain the different concepts explored within your implementation and why you decided to implement things the way they are, just keep in mind that the goal is to help guide the person that is going to be reviewing your code so try to make it clear and concise.
 
@@ -50,7 +46,7 @@ Your app should respond to the following 5 routes:
 
 `/` (root) The initial step should have 3 fields: first name, email and password and a next button.
 
-`/more-info` The second step should have 2 fields: a favorite color select field and an agreement checkbox. A back button allows going back to the initial step and a next button to the confirmation screen. 
+`/more-info` The second step should have 2 fields: a favorite color select field and an agreement checkbox. A back button allows going back to the initial step and a next button to the confirmation screen.
 
 `/confirmation`: The third step is a read-only confirmation screen displaying the data collected in the 2 previous steps and a button to submit the form. A back button allows going back to to the previous step.
 
@@ -66,21 +62,21 @@ The following wireframe represents how each of these pages should look and the e
 
 ### Specifications
 
-> **Note:** _There is no need to create any API endpoints_. The endpoints you need will be accessible on `http://localhost:3001` after you invoke `npm start` or `yarn start`.
+> **Note:** _There is no need to create any API endpoints_. The endpoints you need will be accessible on `http://localhost:3001` after you invoke `yarn start`.
 
 1. The list of colors to be displayed in the `/more-info` page should be built from the response to a `GET` request to `http://localhost:3001/api/colors`
 
 2. To submit the form data, use a `POST` request with an `application/json` content type to the `http://localhost:3001/api/submit` endpoint. The submitted data should look like:
 
-  ```json
-  {
-      "name": "",
-      "email": "",
-      "password": "",
-      "color": "",
-      "terms": false
-  }
-  ```
+```json
+{
+  "name": "",
+  "email": "",
+  "password": "",
+  "color": "",
+  "terms": false
+}
+```
 
 3. Show the success / error page according to the HTTP status returned from the submit request.
 
