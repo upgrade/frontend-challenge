@@ -9,6 +9,7 @@ For the sake of UI simplicity i decided to start it off with bootstrap and react
 I also took the liberty to give the application a look and feel that is somewhat similar to the Upgrade.com site. I'm using the same logo and fonts.
 
 ### Note: My local server runs on port 5173, therefore i had to update the server/index.js file to support API calls from this port.
+### URL for app: http://localhost:5173/
 
 ## Libraries
 
