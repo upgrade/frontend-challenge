@@ -7,7 +7,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import upgradeStore from './redux/store';
 
-const store = createStore(upgradeStore);
+const cachedStore = JSON.parse(localStorage.getItem('upgrade-state'));
+
+const store = createStore(upgradeStore, cachedStore ? cachedStore : undefined);
 
 ReactDOM.render(
     <div style={{width: '20rem', margin: 'auto', marginTop: '10rem'}}>

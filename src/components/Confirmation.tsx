@@ -16,6 +16,7 @@ const Confirmation = memo(() => {
         async () => {
             try {
               await submit({...signUp, ...moreInfo});
+              localStorage.setItem('upgrade-state', null);
               navigate(`/success`);
             } catch {
               navigate(`/error`);

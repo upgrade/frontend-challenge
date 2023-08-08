@@ -4,11 +4,11 @@ import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
-import { updateMoreInfo } from '../redux/store';
+import { updateMoreInfo, updateCachedState } from '../redux/store';
 import { getColors } from '../redux/api';
 
 const MoreInfo = memo(() => {
-    const upgradeStore = useSelector(state => state.moreInfo);
+    const moreInfo = useSelector(state => state.moreInfo);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -32,9 +32,15 @@ const MoreInfo = memo(() => {
       }
     }, [colors, setColors]);
 
+    useEffect(() => {
+        setSelectedColor(moreInfo?.color);
+        setTermsChecked(moreInfo?.terms);
+    }, [setSelectedColor, setTermsChecked, moreInfo])
+
     const onSubmit = useCallback(
         async (selectedColor, termsChecked) => {
             dispatch(updateMoreInfo({color: selectedColor, terms: termsChecked}));
+            updateCachedState({moreInfo: {color: selectedColor, terms: termsChecked}});
             navigate(`/confirmation`);
         },
         []
@@ -55,7 +61,7 @@ const MoreInfo = memo(() => {
               </Select>
           </div>
           <div style={{marginBottom: '1rem'}}>
-              <Checkbox onChange={(e) => setTermsChecked(e.target.checked)}>I agree to the terms and conditions</Checkbox>
+              <Checkbox checked={termsChecked} onChange={(e) => setTermsChecked(e.target.checked)}>I agree to the terms and conditions</Checkbox>
           </div>
           <div>
               <Button style={{marginRight: '1rem'}} type="primary" onClick={() => navigate(`/`)}>

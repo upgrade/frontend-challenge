@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 const UPDATE_SIGNUP = 'UPDATE_SIGNUP';
 const UPDATE_MORE_INFO = 'UPDATE_MORE_INFO';
 
+
 type signUpProps = {
 	name: string,
 	email: string,
@@ -18,14 +19,14 @@ export function updateSignUp(signUpInfo: signUpProps) {
 		type: 'UPDATE_SIGNUP',
 		signUpInfo
 	}
-}
+};
 
 export function updateMoreInfo(moreInfo: moreInfoProps) {
 	return {
 		type: 'UPDATE_MORE_INFO',
 		moreInfo
 	}
-}
+};
 
 const defaultStore = {
 	signUp: {
@@ -39,7 +40,20 @@ const defaultStore = {
 	}
 };
 
-function store(state=defaultStore, action) {
+export const updateCachedState = (content) => {
+	try {
+		const oldState = JSON.parse(localStorage.getItem('upgrade-state'));
+		if (!oldState) {
+			localStorage.setItem('upgrade-state', JSON.stringify({...defaultStore, ...content}));
+		} else {
+			localStorage.setItem('upgrade-state', JSON.stringify({...oldState, ...content}));
+		}
+	  } catch (e) {
+	    // Ignore
+	  }
+};
+
+function reducer(state=defaultStore, action) {
 	switch (action.type) {
 		case UPDATE_SIGNUP:
 			return {
@@ -54,6 +68,6 @@ function store(state=defaultStore, action) {
 		default:
 			return state;
 	}
-}
+};
 
-export default store;
+export default reducer;
