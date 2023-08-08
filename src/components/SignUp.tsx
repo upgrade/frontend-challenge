@@ -1,33 +1,39 @@
 import React, { memo, useCallback } from 'react';
 import { Form, Button, Input, Row, Col } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { updateSignUp } from '../redux/store';
 
 const { useForm } = Form;
 
 const SignUp = memo(() => {
     const [form] = useForm();
+    const upgradeStore = useSelector(state => state.signUp);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const onSubmit = useCallback(
-        async ({firstName, email, password}) => {
-            console.log(`${firstName}, ${email}, ${password}`);
+        async ({name, email, password}) => {
+            dispatch(updateSignUp({name, email, password}));
+            navigate(`/more-info`);
         },
         [form]
     );
 
   return (
-    <Form form={form} layout="inline" onFinish={onSubmit}>
-        <Row>
-            <Col span={24}>
+    <>
+        <h1 style={{marginBottom: '2rem'}}>Sign Up</h1>
+        <Form form={form} onFinish={onSubmit}>
+            <div>
                 <Form.Item
-                    className="input-first-name"
-                    name="firstName"
+                    className="input-name"
+                    name="name"
                     rules={[{ required: true, message: 'Please enter a first name' }]}
                 >
                     <Input placeholder="First Name" />
                 </Form.Item>
-            </Col>
-        </Row>
-        <Row>
-            <Col span={24}>
+            </div>
+            <div>
                 <Form.Item
                     className="input-email"
                     name="email"
@@ -35,10 +41,8 @@ const SignUp = memo(() => {
                 >
                     <Input placeholder="E-Mail" />
                 </Form.Item>
-            </Col>
-        </Row>
-        <Row>
-            <Col span={24}>
+            </div>
+            <div>
                 <Form.Item
                     className="input-password"
                     name="password"
@@ -46,16 +50,14 @@ const SignUp = memo(() => {
                 >
                     <Input placeholder="Password" />
                 </Form.Item>
-            </Col>
-        </Row>
-        <Row>
-            <Col span={24}>
+            </div>
+            <div>
                 <Button type="primary" htmlType="submit">
                     Next
                 </Button>
-            </Col>
-        </Row>
-    </Form>
+            </div>
+        </Form>
+    </>
   );
 });
 
