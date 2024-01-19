@@ -1,0 +1,151 @@
+/**********************************************************************************/
+/* custom.scss: 
+/* For the sake of simplicity i have imported bootstrap and i will simply
+/* put all custom styling in this file.
+/* @author: Elvis Goncalves
+/**********************************************************************************/
+
+// Import Bootstrap and its default variables
+@import 'bootstrap/scss/bootstrap.scss';
+
+@import 'react-overlay-loader/styles.css';
+
+body {
+    font-family: Graphik, Arial, sans-serif;
+    font-size: 1.25rem;
+}
+
+.container {
+    height: 100vh;
+}
+
+.card-header {
+    background-color: #fff;
+    color: rgb(14, 104, 14);
+    font-size: 2.5rem;
+    font-weight: 500;
+    img {
+        width: 80px;
+    }
+}
+
+.form-control:focus.error, .form-select:focus.error, .checkbox input[type=checkbox]:focus + .checkbox.error {
+    border-color: $danger;
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+    outline: 3px solid rgba(255, 0, 0, 0.25);
+}
+
+.form-control.error, .form-select.error, .checkbox input[type=checkbox] + .checkbox.error {
+    border: 1px solid $danger;
+}
+
+.form-control, .form-select {
+    cursor: text;
+    padding-top: 0.9em;
+    padding-bottom: 0.1em;
+
+    & + .placeholder-label {
+        color: gray;
+        
+        font-size: 1rem;
+        left: 1.1rem;
+        pointer-events: none;
+        position: absolute;
+        top: 0.9rem;
+        transition: font-size 0.1s ease 0s, top 0.1s ease 0s;
+
+        
+    }
+
+    &:focus + .placeholder-label, &.has-data + .placeholder-label {
+        font-size: 0.75rem;
+        top: 0.5rem;
+        transform: translateY(-20%);
+        transition: font-size 0.1s ease 0s, top 0.1s ease 0s,;
+    }
+}
+
+/* BEGIN: custom checkboxes */
+.checkbox {
+    margin-top: 0;
+
+    label {
+        display: block;
+        font-weight: 400;
+        padding: 0 15px 0 35px;
+        position: relative;
+    }
+
+    input[type="checkbox"] {
+        outline: none;
+        left: 3px;
+        top: 3px;
+        position: absolute;
+
+        &+ .checkbox {
+            background: #fff;
+            border: 1px solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius);
+            box-shadow: none;
+            display: inline-block;
+            height: 24px;
+            left: 0;
+            position: absolute;
+            top: 1px;
+            vertical-align: middle;
+            width: 24px;
+        }
+    
+        &:checked+.checkbox {
+            background: #fff;
+            border: 1px solid var(--bs-border-color);
+            &:after {
+                visibility: visible;
+            }
+        }
+    
+        &:focus + .checkbox { 
+            outline: 3px solid var(--bs-border-color);
+
+            // &.error {
+            //     outline: 3px solid rgba(255, 0, 0, 0.25);
+            // }
+        }
+    
+        &+.checkbox:after {
+            border-bottom: 3px solid var(--bs-body-color);
+            border-left: 3px solid var(--bs-body-color);
+            content: '';
+            height: 9px;
+            left: 3px;
+            position: absolute;
+            top: 4px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            visibility: hidden;
+            width: 16px;
+        }
+    }
+}
+/* END: custom radio and checkboxes */
+
+.confirmation {
+    font-size: 1.25rem;
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+img.page-not-found {
+    width: 50%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gray !important;
+    opacity: 1; /* Firefox */
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: gray !important;
+}
