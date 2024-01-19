@@ -12,6 +12,8 @@ import { setColors, setLoading, setUser } from '../slices/appSlice'
 import classNames from "classnames";
 
 export default function AdditionalInfo() { 
+
+    // Change in branch1
     
     const dispatch = useDispatch();
     
